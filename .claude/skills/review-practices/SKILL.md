@@ -117,7 +117,50 @@ For each novel practice found, create a draft entry:
 
 ---
 
-## Phase 3: Summary
+## Phase 3: Repo Inventory Refresh
+
+Scan `C:\Github\` for all directories that contain a `.git` folder (i.e., are git repos). For each:
+
+1. Check if it's already in `C:\Github\BP\.claude\references\repo-inventory.md`
+2. If missing, determine its characteristics (check for package.json, CLAUDE.md, .claude/, Dockerfile, tests, etc.) and add a row to the inventory table
+3. If present, verify the tags are still accurate -- check if the repo has gained or lost characteristics (e.g., added Docker, added tests, added .claude/ config since last scan)
+4. Update the Tag Groups section at the bottom to reflect any changes
+
+Report:
+```
+## Inventory Refresh
+- Repos scanned: N
+- New repos added: <list>
+- Repos updated: <list with what changed>
+- Repos removed: <list, if directories no longer exist>
+```
+
+---
+
+## Phase 4: Deprecation Check
+
+For each entry in BP:
+
+1. Read the `source-repo` from frontmatter
+2. Verify the pattern still exists in that repo (quick file/config existence check)
+3. If the source pattern has been removed or significantly changed:
+   - Add `deprecated: true` and `deprecated-reason: <why>` to the entry's frontmatter
+   - If a replacement pattern exists, add `superseded-by: <new-slug>`
+   - Update the concern's `llms.txt` to mark the entry as DEPRECATED
+4. If an entry already has `deprecated: true`, verify the deprecation is still valid
+
+Report:
+```
+## Deprecation Check
+- Entries validated: N
+- Newly deprecated: <list with reasons>
+- Already deprecated: N
+- Deprecations reversed: <list, if source pattern was restored>
+```
+
+---
+
+## Phase 5: Summary
 
 Output a final summary:
 
@@ -134,6 +177,15 @@ External:
   - Sources searched: N
   - New entries created: N
   - Updates suggested: N
+
+Inventory:
+  - Repos scanned: N
+  - New repos added: N
+  - Repos updated: N
+
+Deprecation:
+  - Entries validated: N
+  - Newly deprecated: N
 
 Total entries: N (was M before review)
 ```

@@ -75,9 +75,9 @@ To add manually:
 
 ## Practice Scout (Auto-Discovery)
 
-A global PostToolUse hook fires after every `git commit` in any repo. The practice-scout agent (Haiku) analyzes the commit diff, checks BP for existing coverage, and auto-creates entries for novel reusable patterns. Most commits produce nothing -- only infrastructure, tooling, and configuration patterns are captured.
+A global Stop hook fires at the end of every Claude Code session. The practice-scout agent (Haiku) checks if any commits were made during the session, analyzes their diffs, checks BP for existing coverage, and auto-creates entries for novel reusable patterns. Most sessions produce nothing -- only infrastructure, tooling, and configuration patterns are captured.
 
-Entries created by the scout include `discovered-by: practice-scout` in NOTES with the source repo and commit hash.
+Entries created by the scout include "Auto-discovered by practice-scout" in NOTES with the source repo and commit hash.
 
 ## KB Location
 
