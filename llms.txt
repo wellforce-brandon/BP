@@ -1,0 +1,47 @@
+# BP Best Practices Knowledge Base
+
+> Machine-readable knowledge base of proven coding patterns. Before starting new work, load this file, then load the llms.txt for each concern relevant to your task. Load only FOUNDATIONAL entries unless a specific topic is relevant.
+
+## Priority Legend
+
+FOUNDATIONAL = universal patterns every repo should follow -- always load these
+RECOMMENDED = strong patterns for matching tech stacks -- load when relevant
+OPTIONAL = nice-to-have improvements -- skip unless explicitly asked
+
+## Concerns
+
+### Claude Configuration
+- [Claude Config index](practices/claude-config/llms.txt): CLAUDE.md structure, rules, hooks, skills, agents (5 entries)
+
+### Testing
+- [Testing index](practices/testing/llms.txt): Vitest, Jest, Playwright, coverage patterns (2 entries)
+
+### Linting & Formatting
+- [Linting & Formatting index](practices/linting-formatting/llms.txt): Biome, ESLint, auto-format hooks (2 entries)
+
+### Error Handling
+- [Error Handling index](practices/error-handling/llms.txt): Structured logging, error context propagation (1 entry)
+
+### Deployment
+- [Deployment index](practices/deployment/llms.txt): Docker multi-stage, Cloudflare, Northflank, Doppler (3 entries)
+
+### Monorepo
+- [Monorepo index](practices/monorepo/llms.txt): pnpm + Turborepo, shared packages, workspaces (2 entries)
+
+### Versioning
+- [Versioning index](practices/versioning/llms.txt): Semver, changelog enforcement (2 entries)
+
+### Safety
+- [Safety index](practices/safety/llms.txt): Read-only-first, permissions gates, PreToolUse hooks (2 entries)
+
+### Documentation
+- [Documentation index](practices/documentation/llms.txt): Reference files, plan structure, investigation patterns (2 entries)
+
+### Design Systems
+- [Design Systems index](practices/design-systems/llms.txt): OKLCH tokens, guardrails, iframe isolation (1 entry)
+
+### Environment
+- [Environment index](practices/environment/llms.txt): Doppler + .env.local, secrets encryption (1 entry)
+
+### Knowledge Bases
+- [Knowledge Bases index](practices/knowledge-bases/llms.txt): YAML frontmatter, two-level indexes, ID conventions (1 entry)

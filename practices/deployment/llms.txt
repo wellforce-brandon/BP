@@ -1,0 +1,9 @@
+# Deployment Best Practices
+
+> Proven patterns for Docker, Cloudflare Pages, Northflank, and deployment pipelines.
+
+## Entries
+
+- [Docker Multi-Stage Builds for Node.js](docker-multi-stage.md): Two-stage Dockerfile with non-root user and dumb-init signal handling. RECOMMENDED.
+- [Cloudflare Workers/Pages Deployment with OpenNext](cloudflare-pages-config.md): Deploy Next.js to Cloudflare Workers via @opennextjs/cloudflare adapter. RECOMMENDED.
+- [Doppler as Single Source of Truth for Secrets](doppler-secrets.md): Centralized secrets management with dev/stg/prd configs. RECOMMENDED.

@@ -1,0 +1,8 @@
+# Safety Best Practices
+
+> Proven patterns for read-only-first workflows, permissions gates, and protective hooks.
+
+## Entries
+
+- [Read-Only First Rule (RULE 0)](read-only-first-rule.md): Gather information before taking action. Read-only commands first. Modifications only with user approval. FOUNDATIONAL.
+- [Permissions Pass Gate (RULE 2)](permissions-gate.md): Cryptographic verification gate for privileged Graph API permission changes. RECOMMENDED.

@@ -1,0 +1,7 @@
+# Environment Best Practices
+
+> Proven patterns for secrets management, environment configuration, and Doppler integration.
+
+## Entries
+
+- [Doppler + .env.local Fallback Pattern](doppler-env-local-pattern.md): Doppler as primary secrets source with .env.local offline fallback. RECOMMENDED.

@@ -1,0 +1,8 @@
+# Versioning Best Practices
+
+> Proven patterns for semantic versioning, changelog enforcement, and release management.
+
+## Entries
+
+- [Major.Minor.Patch.Build Versioning](major-minor-patch-build.md): Four-segment version format with Build incrementing on every commit. RECOMMENDED.
+- [Changelog Enforcement via Commit Rules](changelog-enforcement.md): Path-scoped rule requiring CHANGELOG.md updates on every commit. RECOMMENDED.

@@ -1,0 +1,7 @@
+# Error Handling Best Practices
+
+> Proven patterns for structured logging, error context propagation, and failure handling.
+
+## Entries
+
+- [Structured Logging with Winston](structured-logging-winston.md): JSON logging with timestamps, error stacks, default metadata, and child loggers. RECOMMENDED.

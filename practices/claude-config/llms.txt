@@ -1,0 +1,11 @@
+# Claude Configuration Best Practices
+
+> Proven patterns for structuring CLAUDE.md files, rules, hooks, skills, and agents across repos.
+
+## Entries
+
+- [Hierarchical CLAUDE.md Structure](hierarchical-claude-md.md): Use layered CLAUDE.md architecture -- root for project-wide, subfolders for domain-specific, rules for path-conditional. FOUNDATIONAL.
+- [RULE 1: LL-G Integration Before Scripting](rule1-llg-integration.md): Every repo mandates checking LL-G knowledge base before writing any code. FOUNDATIONAL.
+- [Path-Scoped Rules via .claude/rules/](path-scoped-rules.md): Conditional instructions that only load when working with matching file paths. RECOMMENDED.
+- [Hook Configuration for Automated Enforcement](hook-configuration.md): Use hooks in settings.json to mechanically enforce repo standards. RECOMMENDED.
+- [Skill Frontmatter Configuration](skill-frontmatter.md): Control skill execution with model selection, context isolation, and agent binding. RECOMMENDED.

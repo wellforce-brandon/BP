@@ -1,0 +1,7 @@
+# Design Systems Best Practices
+
+> Proven patterns for design token architecture, guardrails, and component isolation.
+
+## Entries
+
+- [Guardrail-Driven Design System](guardrail-driven-design.md): Comprehensive design constraints document loaded as a reference file for all UI work. RECOMMENDED.

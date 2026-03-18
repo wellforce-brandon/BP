@@ -1,0 +1,7 @@
+# Knowledge Bases Best Practices
+
+> Proven patterns for YAML frontmatter, two-level indexes, and machine-readable documentation.
+
+## Entries
+
+- [Two-Level Index Pattern](two-level-index-pattern.md): Master llms.txt links to per-category indexes; LLMs load only relevant subsets. FOUNDATIONAL.

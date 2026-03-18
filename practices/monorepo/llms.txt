@@ -1,0 +1,8 @@
+# Monorepo Best Practices
+
+> Proven patterns for pnpm workspaces, Turborepo, and shared package architecture.
+
+## Entries
+
+- [pnpm + Turborepo Monorepo Structure](pnpm-turborepo-structure.md): pnpm workspaces for packages, Turborepo for task orchestration, layered dependency hierarchy. RECOMMENDED.
+- [Shared Packages with Barrel Exports and Layer Dependencies](shared-packages-pattern.md): @namespace/ prefixed packages with barrel exports and numbered layer enforcement. RECOMMENDED.

@@ -1,0 +1,8 @@
+# Documentation Best Practices
+
+> Proven patterns for reference files, plan structure, and investigation documentation.
+
+## Entries
+
+- [Reference Files in .claude/references/](reference-files-pattern.md): Store operational references in .claude/references/ with a "Read Before" table in CLAUDE.md. RECOMMENDED.
+- [Plans Must End with Lessons Learned](plan-with-lessons-learned.md): Every plan includes a Lessons Learned section; discoveries route to LL-G. FOUNDATIONAL.

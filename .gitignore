@@ -1,0 +1,6 @@
+audits/*.md
+!audits/.gitkeep
+.env
+.env.*
+node_modules/
+.claude/settings.local.json

@@ -1,0 +1,8 @@
+# Testing Best Practices
+
+> Proven patterns for test configuration, coverage, and test architecture across frameworks.
+
+## Entries
+
+- [Vitest Configuration for Monorepos](vitest-monorepo-config.md): Per-package Vitest configs with Turborepo orchestration. RECOMMENDED.
+- [Playwright E2E Testing](playwright-e2e.md): Cross-browser E2E testing with auto-start dev server. OPTIONAL.
