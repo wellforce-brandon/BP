@@ -11,7 +11,7 @@ OPTIONAL = nice-to-have improvements -- skip unless explicitly asked
 ## Concerns
 
 ### Claude Configuration
-- [Claude Config index](practices/claude-config/llms.txt): CLAUDE.md structure, rules, hooks, skills, agents (5 entries)
+- [Claude Config index](practices/claude-config/llms.txt): CLAUDE.md structure, rules, hooks, skills, agents, llms.txt (6 entries)
 
 ### Testing
 - [Testing index](practices/testing/llms.txt): Vitest, Jest, Playwright, coverage patterns (2 entries)
@@ -32,10 +32,10 @@ OPTIONAL = nice-to-have improvements -- skip unless explicitly asked
 - [Versioning index](practices/versioning/llms.txt): Semver, changelog enforcement (2 entries)
 
 ### Safety
-- [Safety index](practices/safety/llms.txt): Read-only-first, permissions gates, AI code review (3 entries)
+- [Safety index](practices/safety/llms.txt): Read-only-first, permissions gates, AI code review, credential deny-list (4 entries)
 
 ### Documentation
-- [Documentation index](practices/documentation/llms.txt): Reference files, plan structure, investigation patterns (2 entries)
+- [Documentation index](practices/documentation/llms.txt): Reference files, plan structure, ADRs, investigation patterns (3 entries)
 
 ### Design Systems
 - [Design Systems index](practices/design-systems/llms.txt): OKLCH tokens, guardrails, iframe isolation (2 entries)
@@ -50,4 +50,4 @@ OPTIONAL = nice-to-have improvements -- skip unless explicitly asked
 - [Context Management index](practices/context-management/llms.txt): Compaction, handoff docs, subagents, agent memory (3 entries)
 
 ### AI Workflow
-- [AI Workflow index](practices/ai-workflow/llms.txt): Plan-then-execute, structured prompting, TDD with AI (3 entries)
+- [AI Workflow index](practices/ai-workflow/llms.txt): Plan-then-execute, structured prompting, TDD with AI, anti-patterns, parallel sessions (5 entries)

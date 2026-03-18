@@ -7,3 +7,4 @@
 - [Read-Only First Rule (RULE 0)](read-only-first-rule.md): Gather information before taking action. Read-only commands first. Modifications only with user approval. FOUNDATIONAL.
 - [Permissions Pass Gate (RULE 2)](permissions-gate.md): Cryptographic verification gate for privileged Graph API permission changes. RECOMMENDED.
 - [AI-Assisted Code Review with Severity Levels](ai-code-review-pattern.md): Structured reviewer agent with CRITICAL/WARNING/SUGGESTION output. RECOMMENDED.
+- [Credential Path Deny-List in Settings](credential-deny-list.md): Block reads of SSH, AWS, Docker, npm credential paths in settings.json. FOUNDATIONAL.

@@ -9,3 +9,4 @@
 - [Path-Scoped Rules via .claude/rules/](path-scoped-rules.md): Conditional instructions that only load when working with matching file paths. RECOMMENDED.
 - [Hook Configuration for Automated Enforcement](hook-configuration.md): Use hooks in settings.json to mechanically enforce repo standards. RECOMMENDED.
 - [Skill Frontmatter Configuration](skill-frontmatter.md): Control skill execution with model selection, context isolation, and agent binding. RECOMMENDED.
+- [llms.txt as a Standard Project Artifact](llms-txt-for-repos.md): Machine-readable project index for LLM consumption at repo root. RECOMMENDED.

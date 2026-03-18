@@ -7,3 +7,5 @@
 - [Plan in One Session, Execute in Another](plan-then-execute.md): Separate planning from implementation to maximize context for each. FOUNDATIONAL.
 - [Structured Prompting for AI Coding Assistants](structured-prompting.md): Specific, scoped, actionable instructions -- not generic advice the model already knows. RECOMMENDED.
 - [Test-Driven Development with AI Assistants](tdd-with-ai.md): Write tests first to constrain AI output and verify correctness immediately. RECOMMENDED.
+- [AI Session Anti-Patterns and Recovery](anti-patterns.md): Correction loop, kitchen sink session, infinite exploration -- recognize and recover. FOUNDATIONAL.
+- [Parallel Sessions and Fan-Out Patterns](parallel-sessions.md): Writer/reviewer, batch fan-out with claude -p, git worktrees for parallel work. RECOMMENDED.

@@ -6,3 +6,4 @@
 
 - [Reference Files in .claude/references/](reference-files-pattern.md): Store operational references in .claude/references/ with a "Read Before" table in CLAUDE.md. RECOMMENDED.
 - [Plans Must End with Lessons Learned](plan-with-lessons-learned.md): Every plan includes a Lessons Learned section; discoveries route to LL-G. FOUNDATIONAL.
+- [Architectural Decision Records](architectural-decision-records.md): Document why decisions were made, not just what was chosen. RECOMMENDED.
