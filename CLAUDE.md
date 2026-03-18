@@ -63,6 +63,22 @@ To add manually:
 2. Append a bullet to `practices/<concern>/llms.txt` under `## Entries`
 3. Increment the entry count in the master `llms.txt` for that concern
 
+## Skills
+
+| Skill | Purpose |
+|-------|---------|
+| `/add-practice` | Manually add a new best practice entry |
+| `/audit-repo` | Audit a repo against applicable practices, save checklist to target repo |
+| `/apply-practice <slug>` | Apply a single practice to a target repo |
+| `/fix-audit` | Apply all failing practices from the most recent audit |
+| `/review-practices` | Review all entries for quality/conflicts, search web for new practices |
+
+## Practice Scout (Auto-Discovery)
+
+A global PostToolUse hook fires after every `git commit` in any repo. The practice-scout agent (Haiku) analyzes the commit diff, checks BP for existing coverage, and auto-creates entries for novel reusable patterns. Most commits produce nothing -- only infrastructure, tooling, and configuration patterns are captured.
+
+Entries created by the scout include `discovered-by: practice-scout` in NOTES with the source repo and commit hash.
+
 ## KB Location
 
 This repo lives at `C:\Github\BP`. All paths in `llms.txt` and per-concern indexes are relative to the repo root.
