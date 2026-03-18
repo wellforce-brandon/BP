@@ -28,9 +28,12 @@ For each applicable practice:
 3. Mark each check as PASS or FAIL
 4. Record findings
 
-## Step 5: Generate report
+## Step 5: Generate reports
 
-Write a report to `C:\Github\BP\audits\<repo-name>.md` with this format:
+Write TWO copies of the report:
+
+### 5a. Full report in BP (ephemeral, gitignored)
+Write to `C:\Github\BP\audits\<repo-name>.md`:
 
 ```markdown
 # BP Audit: <repo-name>
@@ -59,10 +62,41 @@ Date: <YYYY-MM-DD>
 - Details: What was found
 ```
 
+### 5b. Actionable checklist in the target repo
+Write to `C:\Github\<repo-name>\.claude\bp-audit.md`:
+
+```markdown
+# BP Audit Results
+Date: <YYYY-MM-DD>
+Score: Y/X (percentage%)
+
+## Failing Practices (fix with `/apply-practice <slug>`)
+
+### FOUNDATIONAL
+- [ ] `<concern>/<slug>` -- <one-line description of what's missing>
+- [ ] `<concern>/<slug>` -- <one-line description of what's missing>
+
+### RECOMMENDED
+- [ ] `<concern>/<slug>` -- <one-line description of what's missing>
+
+### OPTIONAL
+- [ ] `<concern>/<slug>` -- <one-line description of what's missing>
+
+## Passing Practices (no action needed)
+- [x] `<concern>/<slug>` -- <title>
+- [x] `<concern>/<slug>` -- <title>
+```
+
+This file lives in the target repo so future sessions can see what was flagged.
+The slugs are directly usable with `/apply-practice` or `/fix-audit`.
+
+If the target repo does not have a `.claude/` directory, create it.
+
 ## Step 6: Present results
 
 Output the summary to the user:
 - Total score
 - List of failing FOUNDATIONAL practices (these should be fixed first)
 - List of failing RECOMMENDED practices
-- Path to the full report file
+- Path to the checklist file in the target repo
+- Remind user: "Run `/fix-audit` in the target repo to apply all failing practices, or `/apply-practice <slug>` for individual ones."
