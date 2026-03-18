@@ -1,0 +1,9 @@
+# AI Workflow Best Practices
+
+> Proven patterns for effective AI-assisted development workflows, prompting strategies, and testing approaches.
+
+## Entries
+
+- [Plan in One Session, Execute in Another](plan-then-execute.md): Separate planning from implementation to maximize context for each. FOUNDATIONAL.
+- [Structured Prompting for AI Coding Assistants](structured-prompting.md): Specific, scoped, actionable instructions -- not generic advice the model already knows. RECOMMENDED.
+- [Test-Driven Development with AI Assistants](tdd-with-ai.md): Write tests first to constrain AI output and verify correctness immediately. RECOMMENDED.

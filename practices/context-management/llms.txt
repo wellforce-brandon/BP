@@ -1,0 +1,9 @@
+# Context Management Best Practices
+
+> Proven patterns for managing context windows, session continuity, and knowledge persistence across AI coding sessions.
+
+## Entries
+
+- [Proactive Compaction and Session Handoff](compact-and-handoff.md): Use /compact at 50% context, create HANDOFF.md for multi-session work. FOUNDATIONAL.
+- [Subagent Usage Patterns](subagent-patterns.md): Aggressively offload research to subagents with "why" context, parallelize explorations. RECOMMENDED.
+- [Shared Agent Memory](agent-memory.md): Version-controlled .claude/agent-memory/ with patterns.md, decisions.md, debugging.md. RECOMMENDED.
