@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BP -- Best Practices Guide</title>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --surface-2: #1a1a25;
+    --border: #2a2a3a;
+    --text: #e4e4ef;
+    --text-dim: #8888a0;
+    --accent: #6c63ff;
+    --accent-glow: rgba(108, 99, 255, 0.15);
+    --foundational: #f59e0b;
+    --recommended: #6c63ff;
+    --optional: #64748b;
+    --green: #22c55e;
+    --red: #ef4444;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  /* Hero */
+  .hero {
+    padding: 80px 0 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, #6c63ff, #a78bfa, #c4b5fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 16px;
+  }
+  .hero p {
+    font-size: 1.15rem;
+    color: var(--text-dim);
+    max-width: 640px;
+    margin: 0 auto 32px;
+  }
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin-top: 32px;
+  }
+  .stat { text-align: center; }
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent);
+  }
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* Priority badges */
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .badge-foundational { background: rgba(245, 158, 11, 0.15); color: var(--foundational); border: 1px solid rgba(245, 158, 11, 0.3); }
+  .badge-recommended { background: var(--accent-glow); color: var(--recommended); border: 1px solid rgba(108, 99, 255, 0.3); }
+  .badge-optional { background: rgba(100, 116, 139, 0.15); color: var(--optional); border: 1px solid rgba(100, 116, 139, 0.3); }
+
+  /* Section headers */
+  .section { padding: 60px 0; border-bottom: 1px solid var(--border); }
+  .section:last-child { border-bottom: none; }
+  .section h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  .section > p { color: var(--text-dim); margin-bottom: 32px; }
+
+  /* Cards */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    gap: 12px;
+  }
+  .card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .card-body { color: var(--text-dim); font-size: 0.92rem; }
+  .card-body strong { color: var(--text); }
+  .card-meta {
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    background: var(--surface-2);
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+  }
+
+  /* Highlight cards for key practices */
+  .highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+  .highlight-card {
+    background: linear-gradient(135deg, var(--surface), var(--surface-2));
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .highlight-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--foundational));
+  }
+  .highlight-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .highlight-card p {
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    margin-bottom: 14px;
+  }
+  .highlight-card .impact {
+    font-size: 0.8rem;
+    color: var(--green);
+    font-weight: 600;
+  }
+
+  /* TOC */
+  .toc {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .toc a {
+    display: block;
+    padding: 12px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+  }
+  .toc a:hover { border-color: var(--accent); }
+  .toc a span { color: var(--text-dim); font-size: 0.8rem; }
+
+  /* How it works */
+  .workflow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+  }
+  .workflow-step {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+  }
+  .workflow-step .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent-glow);
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    border: 2px solid rgba(108, 99, 255, 0.3);
+  }
+  .workflow-step h4 { margin-bottom: 8px; }
+  .workflow-step p { color: var(--text-dim); font-size: 0.85rem; }
+
+  /* Code */
+  code {
+    background: var(--surface-2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.85em;
+    color: #c4b5fd;
+  }
+
+  /* Footer */
+  footer {
+    padding: 40px 0;
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 2rem; }
+    .stats { gap: 24px; }
+    .stat-number { font-size: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1>Best Practices Knowledge Base</h1>
+    <p>Proven patterns extracted from 28 repositories. Machine-readable for AI assistants, human-readable for you. The companion to LL-G (what NOT to do) -- this is what TO do.</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-number">37</div>
+        <div class="stat-label">Practices</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">14</div>
+        <div class="stat-label">Categories</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">28</div>
+        <div class="stat-label">Repos Covered</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">10</div>
+        <div class="stat-label">Foundational</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Practices to Adopt -->
+  <div class="section">
+    <h2>Top Practices to Adopt First</h2>
+    <p>These FOUNDATIONAL practices apply to every repo. If you adopt nothing else, adopt these.</p>
+
+    <div class="highlight-grid">
+      <div class="highlight-card">
+        <h3>Credential Deny-List</h3>
+        <p>Block AI from reading SSH keys, AWS creds, Docker configs, and npm tokens. Defense-in-depth against prompt injection credential exfiltration.</p>
+        <div class="impact">Prevents: credential leaks via AI</div>
+      </div>
+      <div class="highlight-card">
+        <h3>Session Anti-Patterns</h3>
+        <p>Recognize correction loops, kitchen sink sessions, and infinite exploration. Recovery: <code>/clear</code> and re-prompt. Two corrections max before clearing.</p>
+        <div class="impact">Saves: 30-50% wasted tokens per session</div>
+      </div>
+      <div class="highlight-card">
+        <h3>Plan Then Execute</h3>
+        <p>Plan in one session, execute in a fresh one. The planning session's research pollutes context. A clean session with just the plan has maximum room for implementation.</p>
+        <div class="impact">Result: cleaner implementations, fewer context-related errors</div>
+      </div>
+      <div class="highlight-card">
+        <h3>Compact at 50%</h3>
+        <p>Don't wait for the context limit. Use <code>/compact</code> proactively at 50%. Create HANDOFF.md for multi-session work so the next session picks up exactly where you left off.</p>
+        <div class="impact">Preserves: decision context across sessions</div>
+      </div>
+      <div class="highlight-card">
+        <h3>Hierarchical CLAUDE.md</h3>
+        <p>Root CLAUDE.md for project-wide rules (under 200 lines). Subfolder CLAUDE.md for domain-specific rules. <code>.claude/rules/*.md</code> for path-scoped conditional instructions.</p>
+        <div class="impact">Effect: Claude only loads what's relevant to the current task</div>
+      </div>
+      <div class="highlight-card">
+        <h3>Read-Only First (RULE 0)</h3>
+        <p>Gather information before taking action. Read-only commands first. Modifications only with user approval. Three safety tiers: always safe, requires approval, never without request.</p>
+        <div class="impact">Prevents: accidental modifications in production</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- How the System Works -->
+  <div class="section">
+    <h2>How It Works</h2>
+    <p>BP integrates into your workflow at every stage -- automatically.</p>
+
+    <div class="workflow">
+      <div class="workflow-step">
+        <div class="step-num">1</div>
+        <h4>Every Session</h4>
+        <p>RULE 3 in CLAUDE.md reminds Claude to check BP before starting config/tooling work</p>
+      </div>
+      <div class="workflow-step">
+        <div class="step-num">2</div>
+        <h4>Every Commit</h4>
+        <p>Practice Scout agent scans commits for novel patterns and auto-creates BP entries</p>
+      </div>
+      <div class="workflow-step">
+        <div class="step-num">3</div>
+        <h4>On Demand</h4>
+        <p><code>/audit-repo</code> checks a repo against all applicable practices with a score</p>
+      </div>
+      <div class="workflow-step">
+        <div class="step-num">4</div>
+        <h4>Fix It</h4>
+        <p><code>/fix-audit</code> applies all failing practices in priority order automatically</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- All Categories -->
+  <div class="section">
+    <h2>All 14 Categories</h2>
+    <p>Click any category to jump to its practices.</p>
+    <div class="toc">
+      <a href="#ai-workflow">AI Workflow <span>5 entries</span></a>
+      <a href="#context-management">Context Management <span>3 entries</span></a>
+      <a href="#safety">Safety <span>4 entries</span></a>
+      <a href="#claude-config">Claude Configuration <span>6 entries</span></a>
+      <a href="#documentation">Documentation <span>3 entries</span></a>
+      <a href="#deployment">Deployment <span>3 entries</span></a>
+      <a href="#linting">Linting & Formatting <span>2 entries</span></a>
+      <a href="#versioning">Versioning <span>2 entries</span></a>
+      <a href="#monorepo">Monorepo <span>2 entries</span></a>
+      <a href="#testing">Testing <span>2 entries</span></a>
+      <a href="#design-systems">Design Systems <span>2 entries</span></a>
+      <a href="#environment">Environment <span>1 entry</span></a>
+      <a href="#error-handling">Error Handling <span>1 entry</span></a>
+      <a href="#knowledge-bases">Knowledge Bases <span>1 entry</span></a>
+    </div>
+  </div>
+
+  <!-- AI Workflow -->
+  <div class="section" id="ai-workflow">
+    <h2>AI Workflow</h2>
+    <p>How to work effectively with AI coding assistants.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-header"><h3>Plan in One Session, Execute in Another</h3><span class="badge badge-foundational">Foundational</span></div>
+        <div class="card-body">Planning pollutes context with research and discarded options. By the time you implement, 50%+ of context is spent on exploration. <strong>A fresh session with just the plan has maximum context for implementation.</strong></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>AI Session Anti-Patterns and Recovery</h3><span class="badge badge-foundational">Foundational</span></div>
+        <div class="card-body"><strong>Correction Loop:</strong> correcting AI 2+ times fills context with failures. <strong>Kitchen Sink:</strong> mixing unrelated tasks. <strong>Infinite Exploration:</strong> unscoped "investigate" prompts. Recovery for all three: <code>/clear</code> and re-prompt with better instructions.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Structured Prompting</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">Give <strong>specific</strong> instructions (file paths, exact commands), not generic advice. AI already knows "write clean code." Tell it things it doesn't know: your naming conventions, import rules, tool commands. If Claude ignores your rules, the CLAUDE.md is too long, not too short.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>TDD with AI Assistants</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">Write tests BEFORE asking AI to implement. Tests act as a constraint -- the AI knows exactly what "done" looks like. Without tests, AI tends to over-engineer or add features you didn't ask for.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Parallel Sessions and Fan-Out</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body"><strong>Writer/Reviewer:</strong> implement in one session, review in a fresh one (no bias). <strong>Fan-Out:</strong> <code>claude -p</code> in a loop for batch migrations. <strong>Git Worktrees:</strong> parallel agent work without checkout conflicts.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Context Management -->
+  <div class="section" id="context-management">
+    <h2>Context Management</h2>
+    <p>Maximize the value of every token in the context window.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-header"><h3>Proactive Compaction and Session Handoff</h3><span class="badge badge-foundational">Foundational</span></div>
+        <div class="card-body">Use <code>/compact</code> at ~50% context, not when forced. For multi-session work, create a <strong>HANDOFF.md</strong> capturing: current state, decisions made, files changed, and next steps. The next session loads only this file.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Subagent Usage Patterns</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">Offload research to subagents -- they protect the main context. <strong>Always include "why"</strong> in prompts. Spin up parallel Explore subagents when comparing approaches. A subagent that reads 10 files returns only the answer, saving 90% of context.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Shared Agent Memory</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">Version-controlled <code>.claude/agent-memory/</code> with three files: <strong>patterns.md</strong> (confirmed codebase patterns), <strong>decisions.md</strong> (architectural choices with rationale), <strong>debugging.md</strong> (solutions to recurring problems). Persists across sessions.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Safety -->
+  <div class="section" id="safety">
+    <h2>Safety</h2>
+    <p>Prevent damage before it happens. Catch problems after they happen.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-header"><h3>Credential Path Deny-List</h3><span class="badge badge-foundational">Foundational</span></div>
+        <div class="card-body">Block AI from reading <code>~/.ssh/</code>, <code>~/.aws/</code>, <code>~/.docker/config.json</code>, <code>~/.npmrc</code>, <code>~/.git-credentials</code> via deny rules in settings.json. <strong>Defense-in-depth against prompt injection credential exfiltration.</strong> Source: Trail of Bits.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Read-Only First (RULE 0)</h3><span class="badge badge-foundational">Foundational</span></div>
+        <div class="card-body">Three safety tiers: <strong>Always safe</strong> (Get-*, Test-*, read commands). <strong>Requires approval</strong> (Set-*, Remove-*, state changes). <strong>Never without explicit request</strong> (destructive operations, credential resets).</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>AI-Assisted Code Review</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">Dedicated reviewer agent with a structured checklist. Findings categorized as <strong>CRITICAL</strong> (must fix), <strong>WARNING</strong> (should fix), <strong>SUGGESTION</strong> (nice to have). Format: <code>[SEVERITY] file:line -- description</code>.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Permissions Pass Gate (RULE 2)</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">For M365/Graph API: privileged operations require cryptographic verification. STOP, ASK for the pass, VERIFY against PFX, then PROCEED. Enforced by PreToolUse hook -- cannot be bypassed.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Claude Configuration -->
+  <div class="section" id="claude-config">
+    <h2>Claude Configuration</h2>
+    <p>Structure your CLAUDE.md, rules, hooks, and skills for maximum effectiveness.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-header"><h3>Hierarchical CLAUDE.md</h3><span class="badge badge-foundational">Foundational</span></div>
+        <div class="card-body">Root CLAUDE.md (under 200 lines) for project-wide rules. Subfolder CLAUDE.md for domain-specific rules. <code>.claude/rules/*.md</code> with path globs for conditional loading. Claude only reads what's relevant.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>LL-G Integration (RULE 1)</h3><span class="badge badge-foundational">Foundational</span></div>
+        <div class="card-body">Before writing code, fetch the LL-G index and load HIGH-severity entries for your tech stack. This prevents repeating known failure patterns. Present in every repo's CLAUDE.md.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Path-Scoped Rules</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">Rules in <code>.claude/rules/*.md</code> with glob frontmatter. Only load when editing matching files. Backend rules don't waste context during frontend work.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Hook Configuration</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">PostToolUse hooks for auto-formatting on write. PreToolUse hooks for safety gates. Stop/Notification hooks for audible alerts. Mechanical enforcement, not just instructions.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Skill Frontmatter</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">Right-size each skill with <code>model: haiku|sonnet|opus</code>. Use <code>context: fork</code> for isolation. Haiku for data collection, Sonnet for analysis, Opus for planning.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>llms.txt for Every Repo</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">Machine-readable project index at the repo root. What the project is, how it's organized, where key files are. Saves LLMs from reading dozens of files to understand the project.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Documentation -->
+  <div class="section" id="documentation">
+    <h2>Documentation</h2>
+    <p>Capture knowledge that outlives a single session.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-header"><h3>Plans with Lessons Learned</h3><span class="badge badge-foundational">Foundational</span></div>
+        <div class="card-body">Every plan ends with a Lessons Learned section. Discoveries route to LL-G (gotchas) or BP (best practices), not local files. <strong>"Lessons stored locally stay local. Lessons in LL-G benefit every repo."</strong></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Architectural Decision Records</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">Document <strong>why</strong> decisions were made, not just what was chosen. Context, decision, alternatives, consequences. Prevents re-evaluating settled decisions months later.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Reference Files in .claude/references/</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">Stable reference docs (design guardrails, tools, infrastructure) in <code>.claude/references/</code>. Linked from CLAUDE.md with "Read Before" context. Keeps CLAUDE.md lean.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Deployment -->
+  <div class="section" id="deployment">
+    <h2>Deployment</h2>
+    <p>Ship with confidence.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-header"><h3>Docker Multi-Stage Builds</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">Builder stage compiles, production stage copies only the output. Non-root user, <code>dumb-init</code> for signal handling, <code>npm ci --only=production</code>. Image size drops 2-5x.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Cloudflare Workers with OpenNext</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">Deploy Next.js to Cloudflare Workers via <code>@opennextjs/cloudflare</code>. Zero cold starts, global edge distribution. Build without <code>--turbo</code> (OpenNext requires standard compiler).</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Doppler for Secrets</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">Single source of truth for secrets across dev/stg/prd. <code>doppler run</code> for local dev, sync to Cloudflare/Northflank for production. No more scattered .env files.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Linting -->
+  <div class="section" id="linting">
+    <h2>Linting & Formatting</h2>
+    <p>Consistent code without thinking about it.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-header"><h3>Biome Replacing ESLint</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">One Rust-based tool replaces both ESLint and Prettier. 10-100x faster. Linting, formatting, and import sorting in a single pass. No more ESLint/Prettier config conflicts.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Auto-Format on Write Hook</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">PostToolUse hook runs <code>biome check --write</code> after every Edit/Write. Claude's output is automatically formatted to match project conventions. Zero manual formatting passes.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Versioning -->
+  <div class="section" id="versioning">
+    <h2>Versioning</h2>
+    <p>Track every change, enforce documentation.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-header"><h3>Major.Minor.Patch.Build</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">Four-segment versioning where Build increments on <strong>every commit</strong>. Trivially correlate deployed versions to exact commits. Never bump Major autonomously -- that's a human decision.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Changelog Enforcement</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">Path-scoped rule fires before <code>git commit</code>, requiring CHANGELOG.md updates. Keep a Changelog format (Added, Changed, Fixed, Removed, Security). Written while context is fresh.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Monorepo -->
+  <div class="section" id="monorepo">
+    <h2>Monorepo</h2>
+    <p>Scale with structure.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-header"><h3>pnpm + Turborepo</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">pnpm workspaces for strict dependency resolution, Turborepo for cached task orchestration. <code>packages/</code>, <code>apps/</code>, <code>workers/</code> with <code>workspace:*</code> references and topological build ordering.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Shared Packages with Layer Dependencies</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">Common <code>@namespace/</code> prefix, barrel exports from <code>src/index.ts</code>, numbered layer hierarchy (0: utils -> 1: database -> 2: auth -> 3: ui -> 4: apps). Workers never import from apps.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testing -->
+  <div class="section" id="testing">
+    <h2>Testing</h2>
+    <p>Confidence through verification.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-header"><h3>Vitest for Monorepos</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">Per-package <code>vitest.config.ts</code> with Turborepo orchestration. Native TypeScript support, hot module reloading in watch mode, significantly faster than Jest for TS projects.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Playwright E2E</h3><span class="badge badge-optional">Optional</span></div>
+        <div class="card-body">Cross-browser E2E testing with auto-start dev server. <code>webServer</code> config for CI, <code>trace: 'on-first-retry'</code> for debugging flaky tests without overhead on passing ones.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Design Systems -->
+  <div class="section" id="design-systems">
+    <h2>Design Systems</h2>
+    <p>Constrain AI-generated UI for consistency.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-header"><h3>Guardrail-Driven Design</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">Comprehensive constraints doc in <code>.claude/references/design-guardrails.md</code>. Component size limits, spacing scales, accessibility requirements, performance budgets. Claude reads it before any UI work.</div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>OKLCH Token Architecture</h3><span class="badge badge-optional">Optional</span></div>
+        <div class="card-body">Perceptually uniform color tokens. Store as raw triplets (<code>0.65 0.2 260</code>), compose at usage (<code>oklch(var(--primary))</code>). Auto-derive 55 semantic roles from 9 seed colors with WCAG AA contrast guarantees.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Environment -->
+  <div class="section" id="environment">
+    <h2>Environment</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-header"><h3>Doppler + .env.local Fallback</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">Doppler as primary secrets source, <code>.env.local</code> for offline fallback. Document all env vars in CLAUDE.md with type (secret/public) and purpose so Claude knows what's available.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Error Handling -->
+  <div class="section" id="error-handling">
+    <h2>Error Handling</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-header"><h3>Structured Logging with Winston</h3><span class="badge badge-recommended">Recommended</span></div>
+        <div class="card-body">JSON logging with timestamps, error stacks, default metadata (service, PID, hostname). Pretty for dev, JSON for prod. Child loggers per component. Console interception for third-party output.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Knowledge Bases -->
+  <div class="section" id="knowledge-bases">
+    <h2>Knowledge Bases</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-header"><h3>Two-Level Index Pattern</h3><span class="badge badge-foundational">Foundational</span></div>
+        <div class="card-body">Master <code>llms.txt</code> links to per-category indexes. LLMs load the master, identify relevant categories, load only those sub-indexes, then load specific entries. Context-efficient navigation for any knowledge base.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <p>BP Knowledge Base -- <a href="https://github.com/wellforce-brandon/BP">github.com/wellforce-brandon/BP</a></p>
+    <p style="margin-top: 8px;">37 practices across 14 categories. Self-expanding via practice scout. Built with Claude Code.</p>
+  </div>
+</footer>
+
+</body>
+</html>
