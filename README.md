@@ -76,7 +76,7 @@ WebFetch https://raw.githubusercontent.com/wellforce-brandon/BP/main/llms.txt
 
 ## Auto-Discovery
 
-The **practice scout** agent runs at the end of every Claude Code session (via global Stop hook). It checks if any commits were made, analyzes their diffs for novel infrastructure/tooling/config patterns, and auto-creates BP entries for anything not already covered. Most sessions produce nothing -- only genuinely reusable patterns are captured.
+Before every git commit, Claude scans the staged changes for novel infrastructure/tooling/config patterns (per RULE 4 in the global CLAUDE.md). If a candidate is found, Claude reads the `practice-scout.md` agent and follows its instructions to create a BP entry. Most commits produce nothing -- only genuinely reusable patterns are captured.
 
 ## Repo Inventory
 
@@ -101,7 +101,7 @@ LL-G's `/add-lesson` skill cross-references BP when creating gotcha entries, sug
 
 ## Contributing
 
-Run `/add-practice` from any session, or the practice scout will auto-discover patterns from commits. For manual additions:
+Run `/add-practice` from any session, or the practice scout will auto-discover patterns before commits (RULE 4). For manual additions:
 
 1. Create `practices/<concern>/<slug>.md` using the entry format in CLAUDE.md
 2. Append a bullet to `practices/<concern>/llms.txt`

@@ -75,7 +75,7 @@ To add manually:
 
 ## Practice Scout (Auto-Discovery)
 
-A global Stop hook fires at the end of every Claude Code session. The practice-scout agent (Haiku) checks if any commits were made during the session, analyzes their diffs, checks BP for existing coverage, and auto-creates entries for novel reusable patterns. Most sessions produce nothing -- only infrastructure, tooling, and configuration patterns are captured.
+Before every git commit, Claude scans the staged changes for novel reusable patterns (per RULE 4 in the global CLAUDE.md). If a candidate is found, Claude reads `practice-scout.md` and follows its instructions to create the entry. Most commits produce nothing -- only infrastructure, tooling, and configuration patterns are captured.
 
 Entries created by the scout include "Auto-discovered by practice-scout" in NOTES with the source repo and commit hash.
 
