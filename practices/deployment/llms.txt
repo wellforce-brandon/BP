@@ -4,6 +4,8 @@
 
 ## Entries
 
+- [Cloudflare Hyperdrive: Fresh database connections per request](hyperdrive-fresh-connections.md): Never cache database connections at module scope with Hyperdrive. Create fresh per request. FOUNDATIONAL.
 - [Docker Multi-Stage Builds for Node.js](docker-multi-stage.md): Two-stage Dockerfile with non-root user and dumb-init signal handling. RECOMMENDED.
 - [Cloudflare Workers/Pages Deployment with OpenNext](cloudflare-pages-config.md): Deploy Next.js to Cloudflare Workers via @opennextjs/cloudflare adapter. RECOMMENDED.
 - [Doppler as Single Source of Truth for Secrets](doppler-secrets.md): Centralized secrets management with dev/stg/prd configs. RECOMMENDED.
+- [Build version console logging for deployment verification](build-version-logging.md): Log app version at startup to verify which deployment is live. RECOMMENDED.
