@@ -9,3 +9,4 @@
 - [Cloudflare Workers/Pages Deployment with OpenNext](cloudflare-pages-config.md): Deploy Next.js to Cloudflare Workers via @opennextjs/cloudflare adapter. RECOMMENDED.
 - [Doppler as Single Source of Truth for Secrets](doppler-secrets.md): Centralized secrets management with dev/stg/prd configs. RECOMMENDED.
 - [Build version console logging for deployment verification](build-version-logging.md): Log app version at startup to verify which deployment is live. RECOMMENDED.
+- [Server Action CRUD with parseRow and ALLOWED_FIELDS](server-action-crud-parserow.md): Standardized CRUD server actions with field injection prevention, JSONB normalization, and auth gating. RECOMMENDED.

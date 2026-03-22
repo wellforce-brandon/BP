@@ -23,7 +23,7 @@ OPTIONAL = nice-to-have improvements -- skip unless explicitly asked
 - [Error Handling index](practices/error-handling/llms.txt): Structured logging, error context propagation (1 entry)
 
 ### Deployment
-- [Deployment index](practices/deployment/llms.txt): Docker multi-stage, Cloudflare, Hyperdrive, Northflank, Doppler (5 entries)
+- [Deployment index](practices/deployment/llms.txt): Docker multi-stage, Cloudflare, Hyperdrive, Northflank, Doppler, server action CRUD (6 entries)
 
 ### Monorepo
 - [Monorepo index](practices/monorepo/llms.txt): pnpm + Turborepo, shared packages, workspaces (2 entries)
@@ -38,7 +38,7 @@ OPTIONAL = nice-to-have improvements -- skip unless explicitly asked
 - [Documentation index](practices/documentation/llms.txt): Reference files, plan structure, ADRs, investigation patterns (3 entries)
 
 ### Design Systems
-- [Design Systems index](practices/design-systems/llms.txt): OKLCH tokens, guardrails, iframe isolation (2 entries)
+- [Design Systems index](practices/design-systems/llms.txt): OKLCH tokens, guardrails, iframe isolation, diagnostic pages (3 entries)
 
 ### Environment
 - [Environment index](practices/environment/llms.txt): Doppler + .env.local, secrets encryption (1 entry)
