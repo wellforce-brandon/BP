@@ -5,3 +5,6 @@
 ## Entries
 
 - [Structured Logging with Winston](structured-logging-winston.md): JSON logging with timestamps, error stacks, default metadata, and child loggers. RECOMMENDED.
+- [Promise-Based Singleton for Async Resources](async-singleton-init.md): Store the initialization promise, not the resolved value, to prevent duplicate async resource creation. FOUNDATIONAL.
+- [Debounce Database Writes on User Input](debounce-config-saves.md): Debounce or save-on-blur when persisting user input to a database. Never write to storage on every keystroke. RECOMMENDED.
+- [Single Source of Truth for Database Schema](schema-single-source.md): Define schema in one place (the ORM). Generate migrations from it. Never duplicate as raw SQL. RECOMMENDED.

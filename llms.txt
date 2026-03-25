@@ -14,13 +14,13 @@ OPTIONAL = nice-to-have improvements -- skip unless explicitly asked
 - [Claude Config index](practices/claude-config/llms.txt): CLAUDE.md structure, rules, hooks, skills, agents, llms.txt (6 entries)
 
 ### Testing
-- [Testing index](practices/testing/llms.txt): Vitest, Jest, Playwright, coverage patterns (2 entries)
+- [Testing index](practices/testing/llms.txt): Vitest, Jest, Playwright, coverage, zero-tolerance errors (3 entries)
 
 ### Linting & Formatting
 - [Linting & Formatting index](practices/linting-formatting/llms.txt): Biome, ESLint, auto-format hooks (2 entries)
 
 ### Error Handling
-- [Error Handling index](practices/error-handling/llms.txt): Structured logging, error context propagation (1 entry)
+- [Error Handling index](practices/error-handling/llms.txt): Structured logging, async singletons, debounce saves, schema single source (4 entries)
 
 ### Deployment
 - [Deployment index](practices/deployment/llms.txt): Docker multi-stage, Cloudflare, Hyperdrive, Northflank, Doppler, server action CRUD (6 entries)
@@ -32,7 +32,7 @@ OPTIONAL = nice-to-have improvements -- skip unless explicitly asked
 - [Versioning index](practices/versioning/llms.txt): Semver, changelog enforcement (2 entries)
 
 ### Safety
-- [Safety index](practices/safety/llms.txt): Read-only-first, permissions gates, AI code review, credential deny-list (4 entries)
+- [Safety index](practices/safety/llms.txt): Read-only-first, permissions gates, AI code review, credential deny-list, upsert unique keys (5 entries)
 
 ### Documentation
 - [Documentation index](practices/documentation/llms.txt): Reference files, plan structure, ADRs, investigation patterns (3 entries)

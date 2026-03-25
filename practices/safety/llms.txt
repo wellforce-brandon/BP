@@ -8,3 +8,4 @@
 - [Permissions Pass Gate (RULE 2)](permissions-gate.md): Cryptographic verification gate for privileged Graph API permission changes. RECOMMENDED.
 - [AI-Assisted Code Review with Severity Levels](ai-code-review-pattern.md): Structured reviewer agent with CRITICAL/WARNING/SUGGESTION output. RECOMMENDED.
 - [Credential Path Deny-List in Settings](credential-deny-list.md): Block reads of SSH, AWS, Docker, npm credential paths in settings.json. FOUNDATIONAL.
+- [Use Unique Identifiers for Database Upserts](upsert-unique-keys.md): Always use a unique identifier (path, UUID, compound key) for upserts, never a display name. FOUNDATIONAL.
