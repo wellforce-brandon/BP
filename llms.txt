@@ -38,7 +38,7 @@ OPTIONAL = nice-to-have improvements -- skip unless explicitly asked
 - [Documentation index](practices/documentation/llms.txt): Reference files, plan structure, investigation patterns (2 entries)
 
 ### Design Systems
-- [Design Systems index](practices/design-systems/llms.txt): OKLCH tokens, guardrails, iframe isolation (2 entries)
+- [Design Systems index](practices/design-systems/llms.txt): OKLCH tokens, guardrails, UX laws review, iframe isolation (3 entries)
 
 ### Environment
 - [Environment index](practices/environment/llms.txt): Doppler + .env.local, secrets encryption (1 entry)
