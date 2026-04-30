@@ -1,0 +1,7 @@
+# Notifications Best Practices
+
+> Patterns for fanning a single event across multiple notification channels (email, in-app, Slack, SMS) with predictable behavior under partial failure.
+
+## Entries
+
+- [Multi-channel dispatcher with per-channel failure isolation](multi-channel-dispatcher.md): Centralize fan-out so one channel's outage cannot block the others; return structured per-channel results. FOUNDATIONAL.
