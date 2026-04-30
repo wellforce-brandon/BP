@@ -1,0 +1,7 @@
+# Database Best Practices
+
+> Proven patterns for Drizzle ORM, Postgres migrations, indexing, and multi-tenant data layout.
+
+## Entries
+
+- [Drizzle-Kit `--custom` Workflow for Data Backfill + NOT NULL Flip](drizzle-custom-backfill-flow.md): Schema-first, then `--custom` stub, then hand-written backfill + NOT NULL ALTER in dependency order; verify journal `when` monotonicity. RECOMMENDED.
