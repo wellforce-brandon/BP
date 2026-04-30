@@ -23,7 +23,7 @@ OPTIONAL = nice-to-have improvements -- skip unless explicitly asked
 - [Error Handling index](practices/error-handling/llms.txt): Structured logging, error context propagation (1 entry)
 
 ### Deployment
-- [Deployment index](practices/deployment/llms.txt): Docker multi-stage, Cloudflare, Northflank, Doppler (3 entries)
+- [Deployment index](practices/deployment/llms.txt): Docker multi-stage, Cloudflare, Northflank, Doppler, idempotent bootstrap (4 entries)
 
 ### Monorepo
 - [Monorepo index](practices/monorepo/llms.txt): pnpm + Turborepo, shared packages, workspaces (2 entries)
@@ -32,7 +32,7 @@ OPTIONAL = nice-to-have improvements -- skip unless explicitly asked
 - [Versioning index](practices/versioning/llms.txt): Semver, changelog enforcement (2 entries)
 
 ### Safety
-- [Safety index](practices/safety/llms.txt): Read-only-first, permissions gates, PreToolUse hooks (2 entries)
+- [Safety index](practices/safety/llms.txt): Read-only-first, permissions gates, multi-tenant escape hatches (3 entries)
 
 ### Documentation
 - [Documentation index](practices/documentation/llms.txt): Reference files, plan structure, investigation patterns (2 entries)
