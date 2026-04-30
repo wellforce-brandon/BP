@@ -11,13 +11,10 @@ OPTIONAL = nice-to-have improvements -- skip unless explicitly asked
 ## Concerns
 
 ### Claude Configuration
-- [Claude Config index](practices/claude-config/llms.txt): CLAUDE.md structure, rules, hooks, skills, agents (6 entries)
+- [Claude Config index](practices/claude-config/llms.txt): CLAUDE.md structure, rules, hooks, skills, agents (5 entries)
 
 ### Testing
 - [Testing index](practices/testing/llms.txt): Vitest, Jest, Playwright, coverage patterns (2 entries)
-
-### Database
-- [Database index](practices/database/llms.txt): Drizzle ORM, Postgres migrations, indexing, multi-tenant data layout (1 entry)
 
 ### Linting & Formatting
 - [Linting & Formatting index](practices/linting-formatting/llms.txt): Biome, ESLint, auto-format hooks (2 entries)
@@ -26,7 +23,7 @@ OPTIONAL = nice-to-have improvements -- skip unless explicitly asked
 - [Error Handling index](practices/error-handling/llms.txt): Structured logging, error context propagation (1 entry)
 
 ### Deployment
-- [Deployment index](practices/deployment/llms.txt): Docker multi-stage, Cloudflare, Northflank, Doppler, idempotent bootstrap, host-mode rollout (5 entries)
+- [Deployment index](practices/deployment/llms.txt): Docker multi-stage, Cloudflare, Northflank, Doppler (3 entries)
 
 ### Monorepo
 - [Monorepo index](practices/monorepo/llms.txt): pnpm + Turborepo, shared packages, workspaces (2 entries)
@@ -35,7 +32,7 @@ OPTIONAL = nice-to-have improvements -- skip unless explicitly asked
 - [Versioning index](practices/versioning/llms.txt): Semver, changelog enforcement (2 entries)
 
 ### Safety
-- [Safety index](practices/safety/llms.txt): Read-only-first, permissions gates, multi-tenant escape hatches (3 entries)
+- [Safety index](practices/safety/llms.txt): Read-only-first, permissions gates, PreToolUse hooks (2 entries)
 
 ### Documentation
 - [Documentation index](practices/documentation/llms.txt): Reference files, plan structure, investigation patterns (2 entries)
@@ -49,5 +46,5 @@ OPTIONAL = nice-to-have improvements -- skip unless explicitly asked
 ### Knowledge Bases
 - [Knowledge Bases index](practices/knowledge-bases/llms.txt): YAML frontmatter, two-level indexes, ID conventions (1 entry)
 
-### Notifications
-- [Notifications index](practices/notifications/llms.txt): Multi-channel fan-out with per-channel failure isolation (1 entry)
+### Security
+- [Security index](practices/security/llms.txt): Tenant data isolation, customer-controlled support access, audit trails (1 entry)
