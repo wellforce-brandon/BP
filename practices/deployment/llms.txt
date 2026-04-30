@@ -8,3 +8,4 @@
 - [Cloudflare Workers/Pages Deployment with OpenNext](cloudflare-pages-config.md): Deploy Next.js to Cloudflare Workers via @opennextjs/cloudflare adapter. RECOMMENDED.
 - [Doppler as Single Source of Truth for Secrets](doppler-secrets.md): Centralized secrets management with dev/stg/prd configs. RECOMMENDED.
 - [Idempotent Migration Bootstrap Scripts](idempotent-migration-bootstrap.md): Bootstrap data (founding tenants, default tiers, system rows) lives in numbered idempotent scripts using ON CONFLICT DO NOTHING, run after schema migrations, safe to re-run. RECOMMENDED.
+- [Env-Driven Host-Mode Helper for Staged Subdomain Rollout](host-mode-rollout.md): Build multi-host code paths now, drive them from env vars, let unset state degrade to single-host. DNS cutover becomes a one-line env flip rather than a code change. RECOMMENDED.
