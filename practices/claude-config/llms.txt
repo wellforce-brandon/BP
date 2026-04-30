@@ -9,3 +9,4 @@
 - [Path-Scoped Rules via .claude/rules/](path-scoped-rules.md): Conditional instructions that only load when working with matching file paths. RECOMMENDED.
 - [Hook Configuration for Automated Enforcement](hook-configuration.md): Use hooks in settings.json to mechanically enforce repo standards. RECOMMENDED.
 - [Skill Frontmatter Configuration](skill-frontmatter.md): Control skill execution with model selection, context isolation, and agent binding. RECOMMENDED.
+- [Multi-Agent Concurrent Development via Git Worktrees](multi-agent-worktree-concurrency.md): Run N agents in parallel via .claude/worktrees/<phase> branches and merge with --no-ff. Collapses serial wall-clock time roughly N:1 for large phase-based features. RECOMMENDED.
