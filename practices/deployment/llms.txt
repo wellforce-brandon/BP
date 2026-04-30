@@ -9,3 +9,6 @@
 - [Doppler as Single Source of Truth for Secrets](doppler-secrets.md): Centralized secrets management with dev/stg/prd configs. RECOMMENDED.
 - [Idempotent Migration Bootstrap Scripts](idempotent-migration-bootstrap.md): Bootstrap data (founding tenants, default tiers, system rows) lives in numbered idempotent scripts using ON CONFLICT DO NOTHING, run after schema migrations, safe to re-run. RECOMMENDED.
 - [Env-Driven Host-Mode Helper for Staged Subdomain Rollout](host-mode-rollout.md): Build multi-host code paths now, drive them from env vars, let unset state degrade to single-host. DNS cutover becomes a one-line env flip rather than a code change. RECOMMENDED.
+
+- [Two-endpoint Stripe webhook routing with composite-key idempotency](two-endpoint-stripe-webhook-idempotency.md): Separate platform vs Connect endpoints with distinct signing secrets, deduped via `(stripe_event_id, endpoint_source)` unique key + INSERT ON CONFLICT DO NOTHING. RECOMMENDED.
+- [Encode tenant ID in OAuth `state` for single-redirect-URI flows](oauth-state-tenant-encoding.md): Stripe Connect, GitHub Apps, Slack OAuth all enforce single-URI registration. Combine tenant ID + CSRF nonce in `state`; re-verify role on callback. RECOMMENDED.

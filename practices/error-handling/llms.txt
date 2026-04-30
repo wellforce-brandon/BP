@@ -5,3 +5,5 @@
 ## Entries
 
 - [Structured Logging with Winston](structured-logging-winston.md): JSON logging with timestamps, error stacks, default metadata, and child loggers. RECOMMENDED.
+
+- [Tenant lifecycle status checks at the auth-guard layer](lifecycle-status-check-at-guard-layer.md): Inject the write-block check into shared auth guards on mutating HTTP methods. Every existing route picks it up automatically; suspended/locked/archived tenants return 423 Locked without per-route changes. RECOMMENDED.
